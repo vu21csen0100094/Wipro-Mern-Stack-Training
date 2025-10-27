@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring Flowers School - Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <img src="logo.jpg" alt="School Logo" class="logo">
+    <h1>Spring Flowers School</h1>
+  </header>
+
+  <!-- Navigation Menu -->
+  <!--<nav class="navbar">
+    <ul>
+      <li><a href="#" onclick="showSection('welcome')">Home</a></li>
+      <li><a href="#" onclick="showSection('profile')">Student Profile</a></li>
+      <li><a href="#" onclick="showSection('activities')">Monthly Activities</a></li>
+      <li><a href="#" onclick="showSection('timetable')">Timetable</a></li>
+      <li><a href="#" id="logoutBtn">Log Out</a></li>
+    </ul>
+  </nav> -->
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" onclick="showSection('welcome')">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" onclick="showSection('profile')">Student Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" onclick="showSection('activities')">Monthly Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" onclick="showSection('timetable')">Timetable</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" id="logoutBtn">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="content-section">
+    <h2>Welcome to Student Portal 🌸</h2>
+    <p>View your profile, and stay updated with school information — all in one place!</p>
+
+    <!-- About the School -->
+    <div class="about-school">
+      <h3>About Our School</h3>
+      <p>Spring Flowers School is dedicated to nurturing young minds through quality education and holistic development. 
+      Our mission is to build confidence, creativity, and curiosity in every student to help them achieve excellence in academics and life.</p>
+    </div>
+
+    <!-- Notice Board -->
+    <div class="notice-board">
+      <h3>📢 Notice Board</h3>
+      <ul>
+        <li>📅 Parent-Teacher meeting on 28th October 2025</li>
+        <li>🎨 Art competition on 31st October 2025</li>
+        <li>🏆 Sports Day – 10th November 2025</li>
+        <li>📚 Mid-term exams start from 18th November 2025</li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>📞 Contact Us</h3>
+      <p><strong>Address:</strong> Spring Flowers School, Hubli, Karnataka</p>
+      <p><strong>Email:</strong> info@springflowers.edu</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+    </div>
+  </section>
+
+  <!-- Student Profile Section -->
+  <section id="profile" class="content-section hidden">
+    <h2>👩‍🎓 Student Profile</h2>
+    <div class="profile-card">
+      <img src="pic.png" alt="Student Photo" class="student-photo">
+      <div class="profile-details">
+        <p><strong>Name:</strong> Rashmita P</p>
+        <p><strong>Class:</strong> 10th Grade</p>
+        <p><strong>Roll Number:</strong> 23</p>
+        <p><strong>Email:</strong> rashmita@springflowers.edu</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monthly Activities Section -->
+  <section id="activities" class="content-section hidden">
+    <h2>🌸 Monthly Activities</h2>
+    <p>Select a subject below to view its planned activities for this month:</p>
+
+    <!-- Dropdown for Subjects -->
+    <select id="subjectSelect" onchange="showActivities()" style="padding: 8px; border-radius: 5px; margin-bottom: 20px;">
+      <option value="">-- Select Subject --</option>
+      <option value="english">English</option>
+      <option value="math">Mathematics</option>
+      <option value="science">Science</option>
+      <option value="art">Art</option>
+      <option value="sports">Sports</option>
+    </select>
+
+    <!-- Activities List -->
+    <div id="activityContent">
+      <p>🎓 Please select a subject to view the activities.</p>
+    </div>
+  </section>
+
+  <!-- Time Table Section -->
+  <section id="timetable" class="content-section hidden">
+    <h2>📚 Weekly Time Table</h2>
+    <table>
+      <tr>
+        <th>Day</th>
+        <th>9:00 - 10:00</th>
+        <th>10:00 - 11:00</th>
+        <th>11:15 - 12:15</th>
+        <th>1:15 - 2:15</th>
+        <th>2:15 - 3:15</th>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>Math</td>
+        <td>English</td>
+        <td>Science</td>
+        <td>History</td>
+        <td>Sports</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>English</td>
+        <td>Science</td>
+        <td>Math</td>
+        <td>Geography</td>
+        <td>Computer</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td>Science</td>
+        <td>Math</td>
+        <td>History</td>
+        <td>English</td>
+        <td>Art</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>Geography</td>
+        <td>Science</td>
+        <td>Math</td>
+        <td>Computer</td>
+        <td>English</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td>Math</td>
+        <td>English</td>
+        <td>Science</td>
+        <td>Art</td>
+        <td>Sports</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Spring Flowers School | All Rights Reserved</p>
+  </footer>
+
+  <!-- Script for Navigation + Activities + Logout -->
+  <script>
+    // Redirect to login page if user is not logged in
+    document.addEventListener("DOMContentLoaded", function () {
+      const username = localStorage.getItem("username");
+      if (!username) {
+        window.location.href = "login.html";
+      }
+    });
+
+    // Show selected section
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    // Subject-wise monthly activities
+    function showActivities() {
+      const subject = document.getElementById('subjectSelect').value;
+      const activityDiv = document.getElementById('activityContent');
+
+      const activities = {
+        english: [
+          "📖 Reading Week – 11th to 15th November 2025",
+          "🗣️ Storytelling Contest – 18th November 2025",
+          "✍️ Essay Writing Competition – 25th November 2025"
+        ],
+        math: [
+          "🧮 Math Quiz – 6th November 2025",
+          "📐 Geometry Project Exhibition – 12th November 2025",
+          "🏆 Mental Math Challenge – 20th November 2025"
+        ],
+        science: [
+          "🔬 Science Fair – 10th November 2025",
+          "🌿 Environmental Experiment Day – 15th November 2025",
+          "💡 Robotics Workshop – 26th November 2025"
+        ],
+        art: [
+          "🎨 Art Exhibition – 28th November 2025",
+          "🖌️ Creative Drawing Session – 14th November 2025",
+          "🎭 Craft and Colors Day – 21st November 2025"
+        ],
+        sports: [
+          "⚽ Inter-House Sports Competition – 20th November 2025",
+          "🏸 Badminton Tournament – 23rd November 2025",
+          "🏃 Fun Run & Fitness Day – 27th November 2025"
+        ]
+      };
+
+      if (subject && activities[subject]) {
+        activityDiv.innerHTML = "<ul class='activity-list'>" +
+          activities[subject].map(item => `<li>${item}</li>`).join('') +
+          "</ul>";
+      } else {
+        activityDiv.innerHTML = "<p>🎓 Please select a subject to view the activities.</p>";
+      }
+    }
+
+    // Logout functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      const logoutBtn = document.getElementById("logoutBtn");
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+          localStorage.removeItem("username");
+          alert("You have been logged out successfully!");
+          window.location.href = "login.html";
+        });
+      }
+    });
+  </script>
+  <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
